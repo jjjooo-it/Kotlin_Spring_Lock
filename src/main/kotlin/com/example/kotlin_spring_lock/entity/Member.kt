@@ -7,14 +7,13 @@ import jakarta.persistence.*;
 class Member (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     var id: Long? = null, // 회원 식별자
+
+    @Column(name = "has_coupon")
+    var has_coupon: Boolean = false,
 
     @OneToOne
     @JoinColumn(name = "coupon_id")
     var coupon: Coupon? = null, // 쿠폰
-
-    @Column(name = "issued", nullable = false)
-    var hasCoupon: Boolean = false, // 쿠폰 소유 여부
-) {
-    constructor() : this(null, null, false)
-}
+)
