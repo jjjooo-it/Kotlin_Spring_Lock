@@ -11,7 +11,7 @@ class Member (
     var id: Long? = null, // 회원 식별자
 
     @Column(name = "has_coupon")
-    var has_coupon: Boolean = false,
+    var has_coupon: Boolean = false, // 쿠폰 소유 여부
 
     @OneToOne
     @JoinColumn(name = "coupon_id")

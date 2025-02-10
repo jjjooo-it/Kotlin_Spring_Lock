@@ -11,6 +11,4 @@ interface CouponRepository : JpaRepository<Coupon, Long> {
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("SELECT c FROM Coupon c")
     fun lockCouponsTable(): List<Coupon>
-
-    fun findByCouponCode(couponCode: String): MutableList<Coupon>
 }
