@@ -6,6 +6,6 @@ export default function () {
     const res = http.post(`http://localhost:8080/api/coupon/issue`,
         JSON.stringify({ memberId: memberId }), {
             headers: { 'Content-Type': 'application/json' },
-        });git
+        });
     sleep(1);
 }
